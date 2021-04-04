@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var name = ""
     var body: some View {
         Form {
-            TextField("Enter your name", text: $name)
-            // The $ indicates two-way binding
-            // We bind the text field so it shows the value of our property
-            // And we also bind it so any changes to the text field also update the property
-            Text("Your name is \(name)")
+            ForEach(0 ..< 100) {number in
+                Text("Row \(number)")
+            }
         }
     }
 }
