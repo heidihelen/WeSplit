@@ -30,6 +30,7 @@ struct ContentView: View {
                             Text("\(self.tipPercentages[$0])%")
                         }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
                 Section {
                     Text("$\(checkAmount)")
