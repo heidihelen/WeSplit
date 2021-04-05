@@ -13,7 +13,9 @@ struct ContentView: View {
     @State private var tipPercentage = 2
     let tipPercentages = [10, 15, 20, 25, 0]
     var totalPerPerson: Double {
-        // calculate the total per person here
+        let peopleCount = Double(numberOfPeople + 2)
+        let tipSelection = Double(tipPercentages[tipPercentage])
+        let orderAmount = Double(checkAmount) ?? 0
         return 0
     }
     var body: some View {
