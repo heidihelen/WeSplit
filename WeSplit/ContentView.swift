@@ -42,7 +42,7 @@ struct ContentView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 Section {
-                    Text("$\(checkAmount)")
+                    Text("$\(totalPerPerson)")
                 }
             }
             .navigationBarTitle("WeSplit")
