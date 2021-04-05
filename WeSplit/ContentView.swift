@@ -16,6 +16,7 @@ struct ContentView: View {
         Form {
             Section {
                 TextField("Amount", text: $checkAmount)
+                    .keyboardType(.decimalPad)
             }
             Section {
                 Text("$\(checkAmount)")
