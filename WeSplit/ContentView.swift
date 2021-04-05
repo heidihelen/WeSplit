@@ -17,6 +17,9 @@ struct ContentView: View {
             Section {
                 TextField("Amount", text: $checkAmount)
             }
+            Section {
+                Text("$\(checkAmount)")
+            }
         }
     }
 }
