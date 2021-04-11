@@ -21,6 +21,13 @@ struct ContentView: View {
         let amountPerPerson = grandTotal / peopleCount
         return amountPerPerson
     }
+    var totalPlusTip: Double {
+        let tipSelection = Double(tipPercentages[tipPercentage])
+        let orderAmount = Double(checkAmount) ?? 0
+        let tipValue = orderAmount / 100 * tipSelection
+        let grandTotal = orderAmount + tipValue
+        return grandTotal
+    }
     var body: some View {
         NavigationView {
             Form {
@@ -40,6 +47,9 @@ struct ContentView: View {
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
+                }
+                Section(header: Text("Total + Tip")) {
+                    Text("$\(totalPlusTip, specifier: "%.2f")")
                 }
                 Section(header: Text("Amount per person")) {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
